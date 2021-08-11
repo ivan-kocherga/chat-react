@@ -1,25 +1,90 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
+} from 'react-router-dom'
+
+import Chats from './Component/Chats'
+import LoginRegister from './Component/LoginRegister';
+
+import {transitions, positions, Provider as AlertProvider} from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
+
+
+import {useEffect, useState} from "react";
+import {useAlert} from 'react-alert'
+
+import {alertStore, redirectStore} from "./api/anyRedux";
+import ChatWithUser from './Component/ChatWithUser';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [redirect, setRedirect] = useState('')
+
+    redirectStore.subscribe(() => {
+        setRedirect(redirectStore.getState().state)
+    })
+
+
+    const options = {
+        position: positions.BOTTOM_CENTER,
+        timeout: 5000,
+        offset: '30px',
+        transition: transitions.SCALE,
+        color: '#fff'
+    }
+
+    return (
+        <AlertProvider template={AlertTemplate} {...options}>
+            <div className='app'>
+                <Router>
+                    <Switch>
+                        <Route exact path='/'>
+                            <Chats/>
+                        </Route>
+                        <Route path='/auth'>
+                            <LoginRegister/>
+                        </Route>
+                        <Route exact path='/:id'>
+                            <ChatWithUser/>
+                        </Route>
+                        <Route path='*'>
+                            <Redirect to='/'/>
+                        </Route>
+                    </Switch>
+                    {
+                        localStorage.getItem('user') === null
+                            ? <Redirect to='/auth'/>
+                            : void 0
+                    }
+                    {
+                        Boolean(redirect)
+                            ? <div>
+                                <Redirect to={redirect}/>
+                            </div>
+                            : void 0
+                    }
+                </Router>
+                <Alert></Alert>
+            </div>
+        </AlertProvider>
+    )
 }
 
-export default App;
+function Alert() {
+    const alert = useAlert()
+
+    useEffect(() => {
+        alertStore.subscribe(() => {
+            alert.show(alertStore.getState().text, {type: alertStore.getState().type})
+        })
+    }, [])
+
+    return (
+        <div></div>
+    )
+}
+
+export default App

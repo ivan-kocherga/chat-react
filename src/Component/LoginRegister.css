@@ -1,0 +1,61 @@
+.auth{
+    padding: 0 20px;
+    padding-top: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.auth-title{
+    margin-bottom: 30px;
+}
+
+.auth-input input:focus{
+    border: 1px solid black;
+}
+
+.auth-input{
+    margin: 20px 0;
+}
+
+.auth-input input{
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.auth-input p {
+    margin-bottom: 10px;
+}
+
+.auth-submit{
+    margin-bottom: 20px;
+}
+
+.auth p span{
+    cursor: pointer;
+    text-decoration: underline;
+    color: green;
+}
+
+.error-input input{
+    border: 1px solid red;
+}
+
+.error span{
+    color: red;
+    font-size: 12px;
+}
+
+.watch-password img{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.auth-seePassword{
+    display: flex;
+    align-items: center;
+}
+
+.auth-seePassword input{
+    margin-right: 10px;
+}
