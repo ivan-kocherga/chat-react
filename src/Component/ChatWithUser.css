@@ -1,79 +1,79 @@
-.chat{
-    max-width: 600px;
-    margin: 0 auto;
-    height: 100vh;
-    border-radius: 15px;
+.chat {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  border-radius: 15px;
 }
 
-.chat header{
-    padding: 10px 30px;
-    background-color: #aaa;
-    display: flex;
-    border-radius: 0 0 10px 10px;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+.chat header {
+  padding: 10px 30px;
+  background-color: #aaa;
+  display: flex;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.chat__header-btn button{
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin-right: 30px;
+.chat__header-btn button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
-.chat__main-input{
-    position: fixed;
-    bottom: 0;
-    padding: 20px 30px;
-    background-color: #aaa;
-    display: flex;
-    border-radius: 10px 10px 0 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px;
+.chat__main-input {
+  position: fixed;
+  bottom: 0;
+  padding: 20px 30px;
+  background-color: #aaa;
+  display: flex;
+  border-radius: 10px 10px 0 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
 }
 
-.chat__main-input input{
-    width: 50%;
+.chat__main-input input {
+  width: 50%;
 }
 
 .main__noMessage {
-    text-align: center;
-    padding-top: 30px;
+  text-align: center;
+  padding-top: 30px;
 }
 
-.right{
-    background-color: rgb(0, 68, 255);
-    color: white;
-    font-weight: 600;
-    margin: 20px 0;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: 20px;
+.right {
+  background-color: rgb(0, 68, 255);
+  color: white;
+  font-weight: 600;
+  margin: 20px 0;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
-.left{
-    background-color: rgb(122, 158, 255);
-    color: white;
-    font-weight: 600;
-    margin: 20px 0;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 5px;
-    margin-right: auto;
-    margin-left: 20px;
+.left {
+  background-color: rgb(122, 158, 255);
+  color: white;
+  font-weight: 600;
+  margin: 20px 0;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: 20px;
 }
 
-main{
-    padding-top: 40px;
-    padding-bottom: 60px;
+main {
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
